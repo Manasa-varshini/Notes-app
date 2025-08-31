@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgb(172, 154, 157), lightpink);
+    color: #fff;
+    padding: 5% 10%;
+}
+
+.container h1 {
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.container h1 img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.container button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    padding: 12px 25px;
+    margin: 20px 0;
+    border-radius: 45px;
+    background: purple;
+    transition: 0.2s ease;
+}
+
+.container button img {
+    width: 20px;
+}
+
+.container button:hover {
+    background: rgb(112, 0, 112);
+}
+
+#search {
+    width: 90%;
+    max-width: 500px;
+    padding: 12px 15px;
+    margin: 10px 0 25px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+}
+
+.note {
+    position: relative;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.15s ease;
+}
+
+.note:hover {
+    transform: scale(1.02);
+}
+
+.note-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    outline: none;
+    padding-left: 30px;  
+}
+
+.note-body {
+    min-height: 80px;
+    margin-bottom: 10px;
+    outline: none;
+    line-height: 1.4;
+}
+
+.note-time {
+    font-size: 12px;
+    color: black;
+    font-style: italic;
+    display: block;
+    margin-top: 5px;
+}
+
+.note img.delete {
+    position: absolute;
+    width: 22px;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+.note img.delete:hover {
+    opacity: 1;
+}
+
+
+.note img.pin {
+    position: absolute;
+    width: 16px;        
+    height: 16px;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    filter: grayscale(40%);
+    transition: 0.2s;
+}
+
+.note img.pin:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.note.pinned {
+    border: 2px solid gold;
+    box-shadow: 0px 4px 12px rgba(255, 215, 0, 0.5);
+    background: #fffbe6; 
+}
+.note img.color {
+    position: absolute;
+    width: 18px;
+    top: 12px;
+    right: 45px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.note img.color:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.note-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.note-actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.note-actions .share {
+    background: black;
+    color: white;
+}
+
+.note-actions .share:hover {
+    background: #1769aa;
+}
+
+.note-actions .download {
+    background: black;
+    color: white;
+}
+
+.note-actions .download:hover {
+    background: #1769aa;
+}
+.note .lock {
+    position: absolute;
+    bottom: 12px;
+    right: 50px; 
+    background: black;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.note .lock:hover {
+    background: #1769aa;
+}
+
+.trash-container {
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 2px dashed rgba(255,255,255,0.6);
+}
+
+.trash-container h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.trash-note {
+    position: relative;
+    background: #f8d7da; 
+    color: #333;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 10px 0;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    opacity: 0.8;
+}
+
+.trash-actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.trash-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.trash-actions .restore {
+    background: #28a745;
+    color: white;
+}
+
+.trash-actions .restore:hover {
+    background: #218838;
+}
+
+.trash-actions .permanent-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.trash-actions .permanent-delete:hover {
+    background: #b52a37;
+}
