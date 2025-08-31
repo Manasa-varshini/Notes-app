@@ -14,7 +14,7 @@ function attachNoteEvents(note) {
     let body = note.querySelector(".note-body");
     let del = note.querySelector(".delete");
     let pin = note.querySelector(".pin");
-    let colorBtn = note.querySelector(".color");
+    
     let shareBtn = note.querySelector(".share");
     let downloadBtn = note.querySelector(".download");
     let lockBtn = note.querySelector(".lock");
@@ -73,23 +73,8 @@ function attachNoteEvents(note) {
         };
     });
 
-    // color picker
-    colorBtn.onclick = () => {
-        let picker = document.createElement("input");
-        picker.type = "color";
-        picker.style.position = "absolute";
-        picker.style.left = "-9999px";
-        document.body.appendChild(picker);
-
-        picker.click();
-
-        picker.oninput = (e) => {
-            note.style.backgroundColor = e.target.value;
-            updateStorage();
-        };
-
-        picker.onblur = () => picker.remove();
-    };
+    
+    
 
     // share
     shareBtn.onclick = () => {
@@ -178,10 +163,8 @@ function addNoteButtons(note) {
     pin.src = "images/pin.jpg";
     pin.className = "pin";
 
-    // color
-    let colorBtn = document.createElement("img");
-    colorBtn.src = "images/color.png";
-    colorBtn.className = "color";
+    
+    
 
     // actions container
     let actions = document.createElement("div");
@@ -205,7 +188,7 @@ function addNoteButtons(note) {
 
     note.appendChild(del);
     note.appendChild(pin);
-    note.appendChild(colorBtn);
+   
     note.appendChild(actions);
 }
 
